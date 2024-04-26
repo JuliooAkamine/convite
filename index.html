@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-color: #ffe6e6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'Courier New', Courier, monospace;
+        }
+        #convite {
+            background-color: #ff7f7f;
+            color: white;
+            padding: 20px;
+            border-radius: 2%;
+            cursor: pointer;
+            animation: convite 2s infinite;
+            font-size: 20px;
+            text-align: center;
+            z-index: 100;
+        }
+        @keyframes convite {
+            0% {background-color: #ff7f7f;}
+            50% {background-color: #ff4d4d;}
+            100% {background-color: #ff7f7f;}
+        }
+
+        #texto{
+            display: none;
+            text-align: center;
+            z-index: 1000;
+            scale: 0.5;
+            color: white;
+        }
+
+        img{
+            width: 80%;
+            position: fixed;
+        }
+    </style>
+</head>
+<body>
+    <div id="convite" onclick="abrirMensagem()">Clique para abrir o convite</div>
+
+    <img src="coracao-1.png" alt="">
+
+    <h1 id="texto"></h1>
+
+    <script>
+        function abrirMensagem() {
+            var convite = document.getElementById('convite')
+            var texto = document.getElementById('texto')
+            texto.style.display = 'block'
+            texto.innerHTML = ("<h1>Oi meu amor, tudo bem contigo? Este fim de semana você está convidada a sair com seu moreno pra curtir. Traga uma roupa bem linda e vamos aproveitar este fim de semana</h1>.");
+            convite.style.display='none'
+        }
+    </script>
+</body>
+</html>
